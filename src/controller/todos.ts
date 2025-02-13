@@ -19,8 +19,8 @@ export const createTodo: RequestHandler = (req, res, next) => {
   res.status(201).json({ message: "Created to do", createTodo: newTodo }); // feedback to user
 };
 
-export const getTodo: RequestHandler = (req, res, next) => {
-  res.json({ todo: TODOS });
+export const getTodo: RequestHandler = async (req, res, next) => {
+  await res.json({ todo: TODOS });
 };
 
 export const updateToDo: RequestHandler<{ id: string }> = (req, res, next) => {

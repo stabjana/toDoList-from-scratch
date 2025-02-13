@@ -3,6 +3,8 @@ import todoRoutes from './routes/todo';
 import { json } from 'body-parser';
 
 const app = express();
+const mongoose = require('mongoose');
+
 app.use(json());
 app.listen(3000);
 app.use('/todos', todoRoutes);
